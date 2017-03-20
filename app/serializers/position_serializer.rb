@@ -1,5 +1,5 @@
 class PositionSerializer < ActiveModel::Serializer
   attributes :id, :open_date
-  has_one :vessel
-  has_one :port
+  belongs_to :port
+  belongs_to :vessel
 end
