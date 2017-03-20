@@ -2,3 +2,17 @@ h1 Welcome to SeaTruck application
 p = link_to "Ports", ports_path
 p = link_to "Cargos", cargos_path
 p = link_to "Vessels", vessels_path
+hr
+
+h2 API Requests for search Cargo:
+p
+  a target="_new" href="/api/v1/searches/cargos.json?position_id=1" Requests 1
+p  
+  a target="_new" href="/api/v1/searches/cargos.json?position_id=4" Requests 2
+  
+h2 API Requests for search Position:
+
+p
+  a target="_new" href="/api/v1/searches/positions.json?cargo_id=1" Requests 1
+p  
+  a target="_new" href="/api/v1/searches/positions.json?cargo_id=3" Requests 2

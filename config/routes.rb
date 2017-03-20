@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+    namespace :api do
+      namespace :v1 do
+        resources :searches do
+          get :cargos, on: :collection
+          get :positions, on: :collection
+        end
+      end
+    end
+
     resources :vessels, except: :show do
       resources :positions, except: :show
     end
+
     resources :cargos, except: :show
     resources :ports, except: :show
     root 'welcome#index'
