@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cargos, except: :show
   resources :ports, except: :show
   get 'welcome/index'
   root 'welcome#index'

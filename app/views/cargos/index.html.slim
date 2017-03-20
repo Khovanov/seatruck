@@ -1,0 +1,27 @@
+h1 Listing cargos
+p = link_to "Home", root_path
+
+table
+  thead
+    tr
+      th ID
+      th Title
+      th Port
+      th Open date
+      th Capacity
+      th
+      th
+  tbody
+    - @cargos.each do |cargo|
+      tr
+        td = cargo.id
+        td = cargo.title
+        td = cargo.port.title
+        td = cargo.open_date
+        td = cargo.capacity
+        td = link_to 'Edit', edit_cargo_path(cargo)
+        td = link_to 'Destroy', cargo, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Cargo', new_cargo_path

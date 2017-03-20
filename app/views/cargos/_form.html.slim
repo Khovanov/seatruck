@@ -1,0 +1,15 @@
+= form_for @cargo do |f|
+  = render 'common/errors', resource: @cargo
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :port
+    = f.collection_select :port_id, Port.all, :id, :title, { prompt: 'Select port'}
+  .field
+    = f.label :open_date
+    = f.date_select :open_date
+  .field
+    = f.label :capacity
+    = f.number_field :capacity
+  .actions = f.submit

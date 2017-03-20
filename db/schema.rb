@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320002823) do
+ActiveRecord::Schema.define(version: 20170320004131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cargos", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "port_id"
+    t.date     "open_date"
+    t.integer  "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "cargos", ["port_id"], name: "index_cargos_on_port_id", using: :btree
 
   create_table "ports", force: :cascade do |t|
     t.string   "title"
@@ -24,4 +35,5 @@ ActiveRecord::Schema.define(version: 20170320002823) do
     t.datetime "updated_at",                           null: false
   end
 
+  add_foreign_key "cargos", "ports"
 end
