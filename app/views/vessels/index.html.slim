@@ -1,0 +1,23 @@
+h1 Listing vessels
+p = link_to "Home", root_path
+
+table
+  thead
+    tr
+      th ID
+      th Title
+      th Hold capacity
+      th
+      th
+  tbody
+    - @vessels.each do |vessel|
+      tr
+        td = vessel.id
+        td = vessel.title
+        td = vessel.hold_capacity
+        td = link_to 'Edit', edit_vessel_path(vessel)
+        td = link_to 'Destroy', vessel, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Vessel', new_vessel_path

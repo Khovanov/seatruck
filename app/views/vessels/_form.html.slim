@@ -1,0 +1,9 @@
+= form_for @vessel do |f|
+  = render 'common/errors', resource: @vessel
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :hold_capacity
+    = f.number_field :hold_capacity
+  .actions = f.submit
