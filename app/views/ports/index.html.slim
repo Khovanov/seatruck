@@ -1,0 +1,23 @@
+h1 Listing ports
+p = link_to "Home", root_path
+
+table
+  thead
+    tr
+      th Title
+      th Lat
+      th Lng
+      th
+      th
+
+  tbody
+    - @ports.each do |port|
+      tr
+        td = port.title
+        td = port.lat
+        td = port.lng
+        td = link_to 'Edit', edit_port_path(port)
+        td = link_to 'Destroy', port, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+= link_to 'New Port', new_port_path

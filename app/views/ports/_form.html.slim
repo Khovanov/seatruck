@@ -1,0 +1,12 @@
+= form_for @port do |f|
+  = render 'common/errors', resource: @port
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :lat
+    = f.text_field :lat
+  .field
+    = f.label :lng
+    = f.text_field :lng
+  .actions = f.submit
