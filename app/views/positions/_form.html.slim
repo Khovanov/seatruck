@@ -1,0 +1,9 @@
+= form_for([position.vessel, position]) do |f|
+  = render 'common/errors', resource: position
+  .field
+    = f.label :port
+    = f.collection_select :port_id, Port.all, :id, :title, { prompt: 'Select port'}
+  .field
+    = f.label :open_date
+    = f.date_select :open_date
+  .actions = f.submit

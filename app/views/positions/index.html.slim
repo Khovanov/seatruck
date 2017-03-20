@@ -1,0 +1,26 @@
+h1 Listing Position
+h2= @vessel.title
+
+p = link_to "Back to Vessels", vessels_path
+
+table
+  thead
+    tr
+      th ID
+      th Port
+      th Open date
+      th
+      th
+
+  tbody
+    - @positions.each do |position|
+      tr
+        td = position.id
+        td = position.port.title
+        td = position.open_date
+        td = link_to 'Edit', edit_vessel_position_path(position.vessel,position)
+        td = link_to 'Destroy', vessel_position_path(position.vessel,position), 
+            data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+= link_to 'New Position', new_vessel_position_path

@@ -9,6 +9,7 @@ table
       th Hold capacity
       th
       th
+      th
   tbody
     - @vessels.each do |vessel|
       tr
@@ -16,6 +17,7 @@ table
         td = vessel.title
         td = vessel.hold_capacity
         td = link_to 'Edit', edit_vessel_path(vessel)
+        td = link_to 'Positions',  vessel_positions_path(vessel)        
         td = link_to 'Destroy', vessel, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
